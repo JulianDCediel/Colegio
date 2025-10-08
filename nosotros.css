@@ -1,0 +1,127 @@
+/* ==========================================================
+   nosotros.css — Estilos de la página institucional "Nosotros"
+   Cohesionado con el tema global de styles.css
+   ========================================================== */
+
+.about-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.about-section .about-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.about-col.card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+  padding: 2rem;
+}
+
+/* COMPONENTES DE LA ORGANIZACIÓN ESCOLAR */
+.components-section {
+  background: var(--azul-claro);
+  padding: 4rem 0;
+  margin: 3rem 0;
+}
+
+.components-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.component-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+  padding: 2rem;
+  transition: var(--transicion);
+}
+
+.component-card:hover {
+  transform: translateY(-8px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.component-icon {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.component-icon i {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.component-card h3 {
+  color: var(--azul-principal);
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+}
+
+.component-card p {
+  color: var(--texto-suave);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.component-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.component-card li {
+  color: var(--texto-suave);
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.component-card li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--azul-principal);
+  font-weight: bold;
+}
+
+.values-section { padding: 3rem 0; }
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.value-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: var(--sombra-suave);
+  padding: 1.5rem;
+  text-align: center;
+  transition: var(--transicion);
+}
+
+.value-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-fuerte); }
+
+.value-card h4 { color: var(--azul-principal); margin: 0.6rem 0; }
+.value-card p { color: var(--texto-suave); }
+
+@media (max-width: 900px) {
+  .about-section .about-grid { grid-template-columns: 1fr; }
+  .components-grid { grid-template-columns: 1fr; }
+}
+

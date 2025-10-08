@@ -1,0 +1,150 @@
+/* ==========================================================
+   programas.css — Estilos base para TODAS las páginas de programas
+   Se integra visualmente con styles.css (tema global)
+   ========================================================== */
+
+/* Inherit variables from styles.css :root */
+body {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f8fc 100%);
+}
+
+/* Hero específico del programa con overlay */
+.program-hero {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+}
+
+.program-hero .hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.75) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.program-hero .hero-content {
+  text-align: center;
+  color: #fff;
+  max-width: 900px;
+  animation: fadeInUp 0.8s ease both;
+}
+
+.program-hero .hero-badge {
+  background: var(--amarillo);
+  color: var(--azul-principal);
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+.program-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin: 0.2rem 0 0.4rem;
+}
+
+.program-hero .hero-sub {
+  font-size: 1rem;
+  opacity: 0.95;
+}
+
+/* Contenedor principal del cuerpo */
+.container.program-body {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2.5rem 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+}
+
+/* Secciones con alternancia sutil */
+.program-body .section {
+  margin-bottom: 2rem;
+}
+
+.program-body .section:nth-child(even) {
+  background: var(--gris-claro);
+  border-radius: 12px;
+  padding: 2rem;
+}
+
+.program-body .section:nth-child(odd) {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+/* Títulos y subtítulos */
+.program-body .section h2 {
+  color: var(--azul-principal);
+  font-size: 1.7rem;
+  margin-bottom: 0.8rem;
+  border-left: 6px solid var(--azul-principal);
+  padding-left: 12px;
+}
+
+.program-body .section h3 {
+  color: var(--azul-hover);
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem;
+}
+
+/* Listas de puntos legibles */
+.plist {
+  margin-left: 1.2rem;
+  list-style: disc;
+  line-height: 1.7;
+}
+
+/* Tablas informativas */
+.table-wrap { overflow-x: auto; margin: 1rem 0; }
+
+.info-table, .plan-table, .contact-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--sombra-suave);
+}
+
+.info-table thead th, .plan-table thead th {
+  background: var(--azul-principal);
+  color: #fff;
+  text-align: left;
+  padding: 0.9rem 0.8rem;
+}
+
+.info-table tbody td, .plan-table tbody td, .contact-table td {
+  border-bottom: 1px solid #eaeaea;
+  padding: 0.8rem;
+}
+
+.info-table tbody tr:nth-child(even),
+.plan-table tbody tr:nth-child(even) {
+  background: #f8faff;
+}
+
+.plan-table tbody tr:hover, .info-table tbody tr:hover {
+  background: #eef2ff;
+  transition: var(--transicion);
+}
+
+.note { font-size: 0.9rem; color: #555; font-style: italic; }
+
+@media (max-width: 900px) {
+  .container.program-body { padding: 1.25rem; }
+  .program-hero { min-height: 240px; }
+}
+
