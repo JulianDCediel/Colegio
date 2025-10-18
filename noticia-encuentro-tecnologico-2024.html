@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XIII Encuentro de Proyectos Técnicos | ARP C.E.D.</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <style>
+    .post { padding: 6rem 2rem; background: var(--gris-claro); }
+    .post .container { max-width: 900px; margin: 0 auto; background: white; box-shadow: var(--sombra-media); border-radius: 16px; overflow: hidden; }
+    .post-header { padding: 2rem 2rem 0; }
+    .post-header h1 { color: var(--azul-principal); margin-bottom: 0.5rem; }
+    .post-meta { color: var(--texto-suave); font-size: 0.95rem; margin-bottom: 1rem; }
+    .post-body { padding: 1rem 2rem 2rem; line-height: 1.9; color: var(--texto); }
+    .post-body h2 { color: var(--azul-principal); margin-top: 1.5rem; }
+    .post-nav { display: flex; justify-content: space-between; padding: 1rem 2rem 2rem; }
+    .breadcrumb { padding: 1rem 2rem; border-bottom: 1px solid var(--gris-claro); background: #fff; }
+    .breadcrumb a { color: var(--azul-principal); text-decoration: none; }
+    .event-info { background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario)); color: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; }
+    .event-info h3 { margin-bottom: 1rem; font-size: 1.5rem; }
+    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .info-item { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center; }
+    .info-item i { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
+    .projects-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+    .project-card { background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--azul-principal); }
+    .project-card h4 { color: var(--azul-principal); margin-bottom: 0.5rem; }
+    .highlight-box { background: #e8f5e8; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid #28a745; }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="nav-container">
+      <a href="index.html#inicio" class="logo">
+        <div class="logo-icon">
+          <img src="https://www.redacademica.edu.co/sites/default/files/2024-05/escudo%20ARP%20%281%29.png" alt="Logo Colegio">
+        </div>
+        <div class="logo-text">
+          <span class="logo-title">Colegio Técnico Aldemar Rojas Plazas</span>
+          <span class="logo-subtitle">C.E.D.</span>
+        </div>
+      </a>
+
+      <nav>
+        <button class="menu-toggle" aria-label="Abrir menú"><i class="fas fa-bars"></i></button>
+        <ul class="nav-menu">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#programas">Programas Técnicos</a></li>
+          <li class="has-submenu"><a href="index.html#oferta">Oferta Académica</a>
+<ul class="submenu">
+                    <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
+                    <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
+                    <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a></li>
+                </ul>
+</li>
+          <li><a href="noticias.html" class="active">Noticias</a></li>
+          <li><a href="index.html#admisiones">Admisiones</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="post">
+    <div class="container">
+      <div class="breadcrumb"><a href="noticias.html">Noticias</a> / XIII Encuentro de Proyectos Técnicos</div>
+      <div class="post-header">
+        <h1>XIII Encuentro de Proyectos Técnicos y Tecnológicos</h1>
+        <div class="post-meta"><i class="far fa-calendar"></i> Octubre 2024 · Evento Institucional</div>
+      </div>
+      <div class="post-body">
+        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=800&h=400&fit=crop" alt="XIII Encuentro de Proyectos Técnicos" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+        
+        <p>El Colegio Técnico Aldemar Rojas Plazas C.E.D. tiene el gusto de invitar a toda la comunidad educativa y público en general al <strong>XIII ENCUENTRO DE PROYECTOS TÉCNICOS Y TECNOLÓGICOS</strong>, un espacio único para conocer, compartir y valorar el talento, la creatividad y la innovación de nuestros estudiantes.</p>
+
+        <div class="event-info">
+          <h3>🔧📐✨ Invitación Especial</h3>
+          <p>Será una jornada para apreciar los proyectos desarrollados en las áreas técnicas, demostrando el compromiso con la formación integral y el futuro profesional de nuestros jóvenes.</p>
+        </div>
+
+        <h2>📅 Información del Evento</h2>
+        <div class="info-grid">
+          <div class="info-item">
+            <i class="fas fa-calendar-alt"></i>
+            <h4>Fecha</h4>
+            <p>23 y 24 de Octubre</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-clock"></i>
+            <h4>Hora</h4>
+            <p>7:00 a.m. - 12:00 m.</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-map-marker-alt"></i>
+            <h4>Lugar</h4>
+            <p>Instalaciones del Colegio</p>
+          </div>
+          <div class="info-item">
+            <i class="fas fa-users"></i>
+            <h4>Público</h4>
+            <p>Abierto a toda la comunidad</p>
+          </div>
+        </div>
+
+        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=400&fit=crop" alt="Estudiantes presentando proyectos" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+
+        <h2>🚀 Proyectos Destacados</h2>
+        <p>Durante el encuentro, nuestros estudiantes presentarán proyectos innovadores desarrollados en cada una de las áreas técnicas:</p>
+
+        <div class="projects-showcase">
+          <div class="project-card">
+            <h4>💻 Desarrollo de Software</h4>
+            <p>Aplicaciones móviles, sistemas web, bases de datos y soluciones tecnológicas innovadoras desarrolladas por nuestros estudiantes de programación.</p>
+          </div>
+          <div class="project-card">
+            <h4>⚡ Electricidad y Electrónica</h4>
+            <p>Sistemas de automatización, instalaciones eléctricas inteligentes, circuitos electrónicos y proyectos de energía renovable.</p>
+          </div>
+          <div class="project-card">
+            <h4>🏗️ Construcción de Vías</h4>
+            <p>Maquetas de infraestructura vial, diseños de puentes, sistemas de drenaje y proyectos de mejoramiento urbano.</p>
+          </div>
+          <div class="project-card">
+            <h4>🤖 Mecatrónica</h4>
+            <p>Robots automatizados, sistemas de control industrial, prototipos mecatrónicos y soluciones de automatización.</p>
+          </div>
+          <div class="project-card">
+            <h4>📐 Delineante de Arquitectura</h4>
+            <p>Planos arquitectónicos, diseños de viviendas, proyectos urbanísticos y representaciones técnicas en 3D.</p>
+          </div>
+          <div class="project-card">
+            <h4>🎵 Formación Musical</h4>
+            <p>Ensamble musical, interpretaciones instrumentales, composiciones originales y presentaciones artísticas.</p>
+          </div>
+        </div>
+
+        <h2>🎯 Objetivos del Encuentro</h2>
+        <p>Este evento busca:</p>
+        
+        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=800&h=400&fit=crop" alt="Laboratorios del colegio" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+
+        <ul>
+          <li><strong>Mostrar el talento estudiantil:</strong> Exhibir las habilidades y conocimientos adquiridos por nuestros estudiantes</li>
+          <li><strong>Fomentar la innovación:</strong> Promover la creatividad y el pensamiento innovador en el desarrollo de proyectos</li>
+          <li><strong>Crear espacios de intercambio:</strong> Facilitar el diálogo entre estudiantes, docentes, padres de familia y empresarios</li>
+          <li><strong>Valorar el trabajo técnico:</strong> Reconocer la importancia de la formación técnica en el desarrollo del país</li>
+          <li><strong>Motivar la excelencia:</strong> Incentivar a los estudiantes a continuar desarrollando proyectos de calidad</li>
+        </ul>
+
+        <h2>👥 Participantes y Visitantes</h2>
+        <p>El encuentro contará con la participación de:</p>
+        
+        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&h=400&fit=crop" alt="Comunidad educativa" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+
+        <ul>
+          <li><strong>Estudiantes:</strong> Más de 200 estudiantes presentando sus proyectos</li>
+          <li><strong>Docentes:</strong> Equipo docente evaluando y asesorando</li>
+          <li><strong>Padres de Familia:</strong> Familias apoyando y conociendo el trabajo de sus hijos</li>
+          <li><strong>Empresarios:</strong> Representantes de empresas aliadas evaluando proyectos</li>
+          <li><strong>Autoridades Educativas:</strong> Delegados de la Secretaría de Educación de Bogotá</li>
+          <li><strong>Comunidad Local:</strong> Vecinos y residentes de San Cristóbal</li>
+        </ul>
+
+        <h2>🏆 Reconocimientos y Evaluación</h2>
+        <p>Durante el encuentro se realizará la evaluación de proyectos por parte de jurados especializados:</p>
+        
+        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&h=400&fit=crop" alt="Evaluación de proyectos" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+
+        <ul>
+          <li><strong>Innovación:</strong> Originalidad y creatividad en la solución propuesta</li>
+          <li><strong>Aplicabilidad:</strong> Relevancia práctica y utilidad del proyecto</li>
+          <li><strong>Presentación:</strong> Claridad en la exposición y documentación</li>
+          <li><strong>Conocimiento Técnico:</strong> Dominio de conceptos y metodologías</li>
+          <li><strong>Trabajo en Equipo:</strong> Colaboración y comunicación efectiva</li>
+        </ul>
+
+        <div class="highlight-box">
+          <h3>💡🙌 ¡Los esperamos para apoyar y motivar a nuestros estudiantes!</h3>
+          <p>Su presencia es fundamental para reconocer el esfuerzo y dedicación de nuestros jóvenes técnicos</p>
+        </div>
+
+        <h2>📱 Redes Sociales y Hashtags</h2>
+        <p>Síguenos en nuestras redes sociales y comparte tu experiencia usando los hashtags oficiales:</p>
+        <ul>
+          <li><strong>#EncuentroTecnológico</strong> - Para destacar la innovación del evento</li>
+          <li><strong>#Innovación</strong> - Para resaltar la creatividad estudiantil</li>
+          <li><strong>#ProyectosEstudiantiles</strong> - Para valorar el trabajo de los estudiantes</li>
+        </ul>
+
+        <h2>🤝 Aliados Institucionales</h2>
+        <p>Este evento cuenta con el apoyo de:</p>
+        <ul>
+          <li><strong>Secretaría de Educación de Bogotá</strong></li>
+          <li><strong>Portal Educativo Red Académica</strong></li>
+          <li><strong>Alcaldía Local de San Cristóbal</strong></li>
+          <li><strong>Empresas aliadas del sector productivo</strong></li>
+        </ul>
+
+        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
+          <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=400&fit=crop" alt="Estudiantes trabajando" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        </div>
+
+        <h2>🎉 ¡No te lo pierdas!</h2>
+        <p>El XIII Encuentro de Proyectos Técnicos y Tecnológicos es una oportunidad única para conocer el talento y la innovación de nuestros estudiantes. Es un espacio donde la teoría se convierte en práctica, donde las ideas se materializan en proyectos reales que contribuyen al desarrollo de nuestra sociedad.</p>
+
+        <p>¡Los esperamos el 23 y 24 de octubre en las instalaciones del Colegio Técnico Aldemar Rojas Plazas C.E.D. para ser testigos de la excelencia técnica de nuestros estudiantes!</p>
+      </div>
+      <div class="post-nav">
+        <a class="news-link" href="noticias.html"><i class="fas fa-arrow-left"></i> Volver a noticias</a>
+        <a class="news-link" href="index.html#programas">Ver programas técnicos</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-main">
+      <div class="footer-brand">
+        <h3>Institución</h3>
+        <p>Colegio Técnico Aldemar Rojas Plazas C.E.D.<br>
+        "Por una Colombia Productiva y en Paz"</p>
+        <div class="footer-social">
+          <a class="social-link" href="https://www.facebook.com/colegiotecnicoaldemarrojasplazas" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-link" href="https://www.instagram.com/coltecaldemarrojasplazas" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h4>Enlaces</h4>
+        <ul>
+          <li><a href="index.html#nosotros">Nosotros</a></li>
+          <li><a href="index.html#programas">Programas</a></li>
+          <li><a href="index.html#admisiones">Admisiones</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Servicios</h4>
+        <ul>
+          <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
+          <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
+          <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2025 Colegio Técnico Aldemar Rojas Plazas C.E.D. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="index.html#contacto">Contáctanos</a>
+      </div>
+    </div>
+  </footer>
+  
+
+  <script>
+    const toggleBtn = document.querySelector('.menu-toggle');
+    const navMenu = document.querySelector('.nav-menu');
+    if (toggleBtn && navMenu) {
+      toggleBtn.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    }
+  </script>
+</body>
+</html>
