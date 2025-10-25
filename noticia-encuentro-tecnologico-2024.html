@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,33 +8,166 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    .post { padding: 6rem 2rem; background: var(--gris-claro); }
-    .post .container { max-width: 900px; margin: 0 auto; background: white; box-shadow: var(--sombra-media); border-radius: 16px; overflow: hidden; }
-    .post-header { padding: 2rem 2rem 0; }
-    .post-header h1 { color: var(--azul-principal); margin-bottom: 0.5rem; }
-    .post-meta { color: var(--texto-suave); font-size: 0.95rem; margin-bottom: 1rem; }
-    .post-body { padding: 1rem 2rem 2rem; line-height: 1.9; color: var(--texto); }
-    .post-body h2 { color: var(--azul-principal); margin-top: 1.5rem; }
-    .post-nav { display: flex; justify-content: space-between; padding: 1rem 2rem 2rem; }
-    .breadcrumb { padding: 1rem 2rem; border-bottom: 1px solid var(--gris-claro); background: #fff; }
-    .breadcrumb a { color: var(--azul-principal); text-decoration: none; }
-    .event-info { background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario)); color: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; }
-    .event-info h3 { margin-bottom: 1rem; font-size: 1.5rem; }
-    .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0; }
-    .info-item { background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 8px; text-align: center; }
-    .info-item i { font-size: 2rem; margin-bottom: 0.5rem; display: block; }
-    .projects-showcase { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
-    .project-card { background: #f8f9fa; padding: 1.5rem; border-radius: 12px; border-left: 4px solid var(--azul-principal); }
-    .project-card h4 { color: var(--azul-principal); margin-bottom: 0.5rem; }
-    .highlight-box { background: #e8f5e8; padding: 1.5rem; border-radius: 12px; margin: 1.5rem 0; border-left: 4px solid #28a745; }
+    .post {
+      padding: 6rem 2rem;
+      background: var(--gris-claro);
+    }
+
+    .post .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: var(--sombra-media);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .post-header {
+      padding: 2rem 2rem 0;
+    }
+
+    .post-header h1 {
+      color: var(--azul-principal);
+      margin-bottom: 0.5rem;
+    }
+
+    .post-meta {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-body {
+      padding: 1rem 2rem 2rem;
+      line-height: 1.9;
+      color: var(--texto);
+    }
+
+    .post-body h2 {
+      color: var(--azul-principal);
+      margin-top: 1.5rem;
+    }
+
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem 2rem;
+    }
+
+    /* ==== VIDEO HORIZONTAL RESPONSIVO ==== */
+    .video-responsive {
+      position: relative;
+      width: 100%;
+      max-width: 720px;
+      /* ancho máximo (ajústalo a gusto: 600–800px) */
+      margin: 1.5rem auto;
+      /* centra el contenedor */
+      padding-bottom: 56.25%;
+      /* relación 16:9 */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: #000;
+    }
+
+    .video-responsive iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* En pantallas pequeñas, que no se corte */
+    @media (max-width: 768px) {
+      .video-responsive {
+        max-width: 100%;
+        padding-bottom: 56.25%;
+      }
+    }
+
+    .breadcrumb {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--gris-claro);
+      background: #fff;
+    }
+
+    .breadcrumb a {
+      color: var(--azul-principal);
+      text-decoration: none;
+    }
+
+    .event-info {
+      background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+
+    .event-info h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+
+    .info-item {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .info-item i {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .projects-showcase {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin: 1.5rem 0;
+    }
+
+    .project-card {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border-left: 4px solid var(--azul-principal);
+    }
+
+    .project-card h4 {
+      color: var(--azul-principal);
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight-box {
+      background: #e8f5e8;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      border-left: 4px solid #28a745;
+    }
   </style>
 </head>
+
 <body>
   <header class="header">
     <div class="nav-container">
       <a href="index.html#inicio" class="logo">
         <div class="logo-icon">
-          <img src="https://www.redacademica.edu.co/sites/default/files/2024-05/escudo%20ARP%20%281%29.png" alt="Logo Colegio">
+          <img src="https://www.redacademica.edu.co/sites/default/files/2024-05/escudo%20ARP%20%281%29.png"
+            alt="Logo Colegio">
         </div>
         <div class="logo-text">
           <span class="logo-title">Colegio Técnico Aldemar Rojas Plazas</span>
@@ -48,12 +182,14 @@
           <li><a href="index.html#nosotros">Nosotros</a></li>
           <li><a href="index.html#programas">Programas Técnicos</a></li>
           <li class="has-submenu"><a href="index.html#oferta">Oferta Académica</a>
-<ul class="submenu">
-                    <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
-                    <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
-                    <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a></li>
-                </ul>
-</li>
+            <ul class="submenu">
+              <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
+              <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
+              <li><a
+                  href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a>
+              </li>
+            </ul>
+          </li>
           <li><a href="noticias.html" class="active">Noticias</a></li>
           <li><a href="index.html#admisiones">Admisiones</a></li>
           <li><a href="index.html#contacto">Contacto</a></li>
@@ -70,15 +206,22 @@
         <div class="post-meta"><i class="far fa-calendar"></i> Octubre 2024 · Evento Institucional</div>
       </div>
       <div class="post-body">
-        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
-          <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcolegiotecnicoaldemarrojasplazas%2Fvideos%2F1791695857901255%2F&show_text=false&width=560&t=0" width="560" height="314" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>);">
+        <div class="video-responsive">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fcolegiotecnicoaldemarrojasplazas%2Fvideos%2F1791695857901255%2F&show_text=false&width=560&t=0"
+            frameborder="0" allowfullscreen="true" scrolling="no"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
         </div>
-        
-        <p>El Colegio Técnico Aldemar Rojas Plazas C.E.D. tiene el gusto de invitar a toda la comunidad educativa y público en general al <strong>XIII ENCUENTRO DE PROYECTOS TÉCNICOS Y TECNOLÓGICOS</strong>, un espacio único para conocer, compartir y valorar el talento, la creatividad y la innovación de nuestros estudiantes.</p>
+
+        <p>El Colegio Técnico Aldemar Rojas Plazas C.E.D. tiene el gusto de invitar a toda la comunidad educativa y
+          público en general al <strong>XIII ENCUENTRO DE PROYECTOS TÉCNICOS Y TECNOLÓGICOS</strong>, un espacio único
+          para conocer, compartir y valorar el talento, la creatividad y la innovación de nuestros estudiantes.</p>
 
         <div class="highlight-box">
           <h3>🔧📐✨ Invitación Especial</h3>
-          <p>Será una jornada para apreciar los proyectos desarrollados en las áreas técnicas, demostrando el compromiso con la formación integral y el futuro profesional de nuestros jóvenes.</p>
+          <p>Será una jornada para apreciar los proyectos desarrollados en las áreas técnicas, demostrando el compromiso
+            con la formación integral y el futuro profesional de nuestros jóvenes.</p>
         </div>
 
         <h2>📅 Información del Evento</h2>
@@ -106,49 +249,61 @@
         </div>
 
         <h2>🚀 Proyectos Destacados</h2>
-        <p>Durante el encuentro, nuestros estudiantes presentarán proyectos innovadores desarrollados en cada una de las áreas técnicas:</p>
+        <p>Durante el encuentro, nuestros estudiantes presentarán proyectos innovadores desarrollados en cada una de las
+          áreas técnicas:</p>
 
         <div class="projects-showcase">
           <div class="project-card">
             <h4>💻 Desarrollo de Software</h4>
-            <p>Aplicaciones móviles, sistemas web, bases de datos y soluciones tecnológicas innovadoras desarrolladas por nuestros estudiantes de programación.</p>
+            <p>Aplicaciones móviles, sistemas web, bases de datos y soluciones tecnológicas innovadoras desarrolladas
+              por nuestros estudiantes de programación.</p>
           </div>
           <div class="project-card">
             <h4>⚡ Electricidad y Electrónica</h4>
-            <p>Sistemas de automatización, instalaciones eléctricas inteligentes, circuitos electrónicos y proyectos de energía renovable.</p>
+            <p>Sistemas de automatización, instalaciones eléctricas inteligentes, circuitos electrónicos y proyectos de
+              energía renovable.</p>
           </div>
           <div class="project-card">
             <h4>🏗️ Construcción de Vías</h4>
-            <p>Maquetas de infraestructura vial, diseños de puentes, sistemas de drenaje y proyectos de mejoramiento urbano.</p>
+            <p>Maquetas de infraestructura vial, diseños de puentes, sistemas de drenaje y proyectos de mejoramiento
+              urbano.</p>
           </div>
           <div class="project-card">
             <h4>🤖 Mecatrónica</h4>
-            <p>Robots automatizados, sistemas de control industrial, prototipos mecatrónicos y soluciones de automatización.</p>
+            <p>Robots automatizados, sistemas de control industrial, prototipos mecatrónicos y soluciones de
+              automatización.</p>
           </div>
           <div class="project-card">
             <h4>📐 Delineante de Arquitectura</h4>
-            <p>Planos arquitectónicos, diseños de viviendas, proyectos urbanísticos y representaciones técnicas en 3D.</p>
+            <p>Planos arquitectónicos, diseños de viviendas, proyectos urbanísticos y representaciones técnicas en 3D.
+            </p>
           </div>
           <div class="project-card">
             <h4>🎵 Formación Musical</h4>
-            <p>Ensamble musical, interpretaciones instrumentales, composiciones originales y presentaciones artísticas.</p>
+            <p>Ensamble musical, interpretaciones instrumentales, composiciones originales y presentaciones artísticas.
+            </p>
           </div>
         </div>
 
         <h2>🎯 Objetivos del Encuentro</h2>
         <p>Este evento busca:</p>
-        
+
         <ul>
-          <li><strong>Mostrar el talento estudiantil:</strong> Exhibir las habilidades y conocimientos adquiridos por nuestros estudiantes</li>
-          <li><strong>Fomentar la innovación:</strong> Promover la creatividad y el pensamiento innovador en el desarrollo de proyectos</li>
-          <li><strong>Crear espacios de intercambio:</strong> Facilitar el diálogo entre estudiantes, docentes, padres de familia y empresarios</li>
-          <li><strong>Valorar el trabajo técnico:</strong> Reconocer la importancia de la formación técnica en el desarrollo del país</li>
-          <li><strong>Motivar la excelencia:</strong> Incentivar a los estudiantes a continuar desarrollando proyectos de calidad</li>
+          <li><strong>Mostrar el talento estudiantil:</strong> Exhibir las habilidades y conocimientos adquiridos por
+            nuestros estudiantes</li>
+          <li><strong>Fomentar la innovación:</strong> Promover la creatividad y el pensamiento innovador en el
+            desarrollo de proyectos</li>
+          <li><strong>Crear espacios de intercambio:</strong> Facilitar el diálogo entre estudiantes, docentes, padres
+            de familia y empresarios</li>
+          <li><strong>Valorar el trabajo técnico:</strong> Reconocer la importancia de la formación técnica en el
+            desarrollo del país</li>
+          <li><strong>Motivar la excelencia:</strong> Incentivar a los estudiantes a continuar desarrollando proyectos
+            de calidad</li>
         </ul>
 
         <h2>👥 Participantes y Visitantes</h2>
         <p>El encuentro contará con la participación de:</p>
-      
+
         <ul>
           <li><strong>Estudiantes:</strong> Más de 200 estudiantes presentando sus proyectos</li>
           <li><strong>Docentes:</strong> Equipo docente evaluando y asesorando</li>
@@ -158,7 +313,7 @@
           <li><strong>Comunidad Local:</strong> Vecinos y residentes de San Cristóbal</li>
         </ul>
 
-        
+
 
         <div class="highlight-box">
           <h3>💡🙌 ¡Los esperamos para apoyar y motivar a nuestros estudiantes!</h3>
@@ -183,9 +338,12 @@
         </ul>
 
         <h2>🎉 ¡No te lo pierdas!</h2>
-        <p>El XIII Encuentro de Proyectos Técnicos y Tecnológicos es una oportunidad única para conocer el talento y la innovación de nuestros estudiantes. Es un espacio donde la teoría se convierte en práctica, donde las ideas se materializan en proyectos reales que contribuyen al desarrollo de nuestra sociedad.</p>
+        <p>El XIII Encuentro de Proyectos Técnicos y Tecnológicos es una oportunidad única para conocer el talento y la
+          innovación de nuestros estudiantes. Es un espacio donde la teoría se convierte en práctica, donde las ideas se
+          materializan en proyectos reales que contribuyen al desarrollo de nuestra sociedad.</p>
 
-        <p>¡Los esperamos el 23 y 24 de octubre en las instalaciones del Colegio Técnico Aldemar Rojas Plazas C.E.D. para ser testigos de la excelencia técnica de nuestros estudiantes!</p>
+        <p>¡Los esperamos el 23 y 24 de octubre en las instalaciones del Colegio Técnico Aldemar Rojas Plazas C.E.D.
+          para ser testigos de la excelencia técnica de nuestros estudiantes!</p>
       </div>
       <div class="post-nav">
         <a class="news-link" href="noticias.html"><i class="fas fa-arrow-left"></i> Volver a noticias</a>
@@ -199,10 +357,12 @@
       <div class="footer-brand">
         <h3>Institución</h3>
         <p>Colegio Técnico Aldemar Rojas Plazas C.E.D.<br>
-        "Por una Colombia Productiva y en Paz"</p>
+          "Por una Colombia Productiva y en Paz"</p>
         <div class="footer-social">
-          <a class="social-link" href="https://www.facebook.com/colegiotecnicoaldemarrojasplazas" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-link" href="https://www.instagram.com/coltecaldemarrojasplazas" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a class="social-link" href="https://www.facebook.com/colegiotecnicoaldemarrojasplazas"
+            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-link" href="https://www.instagram.com/coltecaldemarrojasplazas" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
         </div>
       </div>
       <div class="footer-section">
@@ -219,7 +379,9 @@
         <ul>
           <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
           <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
-          <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a></li>
+          <li><a
+              href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -230,7 +392,7 @@
       </div>
     </div>
   </footer>
-  
+
 
   <script>
     const toggleBtn = document.querySelector('.menu-toggle');
@@ -242,4 +404,5 @@
     }
   </script>
 </body>
+
 </html>

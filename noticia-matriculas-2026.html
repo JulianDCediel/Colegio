@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,166 @@
   <link rel="stylesheet" href="styles/styles.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
   <style>
-    .post { padding: 6rem 2rem; background: var(--gris-claro); }
-    .post .container { max-width: 900px; margin: 0 auto; background: white; box-shadow: var(--sombra-media); border-radius: 16px; overflow: hidden; }
-    .post-header { padding: 2rem 2rem 0; }
-    .post-header h1 { color: var(--azul-principal); margin-bottom: 0.5rem; }
-    .post-meta { color: var(--texto-suave); font-size: 0.95rem; margin-bottom: 1rem; }
-    .post-body { padding: 1rem 2rem 2rem; line-height: 1.9; color: var(--texto); }
-    .post-body h2 { color: var(--azul-principal); margin-top: 1.5rem; }
-    .post-nav { display: flex; justify-content: space-between; padding: 1rem 2rem 2rem; }
-    .breadcrumb { padding: 1rem 2rem; border-bottom: 1px solid var(--gris-claro); background: #fff; }
-    .breadcrumb a { color: var(--azul-principal); text-decoration: none; }
-    .highlight-box { background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario)); color: white; padding: 2rem; border-radius: 12px; margin: 1.5rem 0; text-align: center; }
-    .highlight-box h3 { margin-bottom: 1rem; font-size: 1.5rem; }
-    .whatsapp-cta { background: #25D366; color: white; padding: 1rem 2rem; border-radius: 8px; text-decoration: none; display: inline-block; margin: 1rem 0; font-weight: bold; }
-    .whatsapp-cta:hover { background: #128C7E; }
-    .video-container { position: relative; width: 100%; height: 0; padding-bottom: 56.25%; margin: 1.5rem 0; }
-    .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; }
-    .programs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0; }
-    .program-item { background: #f8f9fa; padding: 1.5rem; border-radius: 8px; border-left: 4px solid var(--azul-principal); }
+    .post {
+      padding: 6rem 2rem;
+      background: var(--gris-claro);
+    }
+
+    .post .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: white;
+      box-shadow: var(--sombra-media);
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    .post-header {
+      padding: 2rem 2rem 0;
+    }
+
+    .post-header h1 {
+      color: var(--azul-principal);
+      margin-bottom: 0.5rem;
+    }
+
+    .post-meta {
+      color: var(--texto-suave);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+    }
+
+    .post-body {
+      padding: 1rem 2rem 2rem;
+      line-height: 1.9;
+      color: var(--texto);
+    }
+
+    .post-body h2 {
+      color: var(--azul-principal);
+      margin-top: 1.5rem;
+    }
+
+    .video-vertical {
+      position: relative;
+      width: 100%;
+      max-width: 420px;
+      /* ancho máximo para mantener formato tipo móvil */
+      margin: 1.5rem auto;
+      /* centra el video */
+      padding-bottom: 125%;
+      /* relación vertical 4:5 (más alto que ancho) */
+      height: 0;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background: #000;
+    }
+
+    .video-vertical iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    /* Opcional: para pantallas grandes centra y amplía un poco */
+    @media (min-width: 768px) {
+      .video-vertical {
+        max-width: 500px;
+        padding-bottom: 62%;
+        /* más alto en pantallas grandes */
+      }
+    }
+
+    .post-nav {
+      display: flex;
+      justify-content: space-between;
+      padding: 1rem 2rem 2rem;
+    }
+
+    .breadcrumb {
+      padding: 1rem 2rem;
+      border-bottom: 1px solid var(--gris-claro);
+      background: #fff;
+    }
+
+    .breadcrumb a {
+      color: var(--azul-principal);
+      text-decoration: none;
+    }
+
+    .highlight-box {
+      background: linear-gradient(135deg, var(--azul-principal), var(--azul-secundario));
+      color: white;
+      padding: 2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    .highlight-box h3 {
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    .whatsapp-cta {
+      background: #25D366;
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      margin: 1rem 0;
+      font-weight: bold;
+    }
+
+    .whatsapp-cta:hover {
+      background: #128C7E;
+    }
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%;
+      margin: 1.5rem 0;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 12px;
+    }
+
+    .programs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .program-item {
+      background: #f8f9fa;
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--azul-principal);
+    }
   </style>
 </head>
+
 <body>
   <header class="header">
     <div class="nav-container">
       <a href="index.html#inicio" class="logo">
         <div class="logo-icon">
-          <img src="https://www.redacademica.edu.co/sites/default/files/2024-05/escudo%20ARP%20%281%29.png" alt="Logo Colegio">
+          <img src="https://www.redacademica.edu.co/sites/default/files/2024-05/escudo%20ARP%20%281%29.png"
+            alt="Logo Colegio">
         </div>
         <div class="logo-text">
           <span class="logo-title">Colegio Técnico Aldemar Rojas Plazas</span>
@@ -47,12 +182,14 @@
           <li><a href="index.html#nosotros">Nosotros</a></li>
           <li><a href="index.html#programas">Programas Técnicos</a></li>
           <li class="has-submenu"><a href="index.html#oferta">Oferta Académica</a>
-<ul class="submenu">
-                    <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
-                    <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
-                    <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a></li>
-                </ul>
-</li>
+            <ul class="submenu">
+              <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
+              <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
+              <li><a
+                  href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a>
+              </li>
+            </ul>
+          </li>
           <li><a href="noticias.html" class="active">Noticias</a></li>
           <li><a href="index.html#admisiones">Admisiones</a></li>
           <li><a href="index.html#contacto">Contacto</a></li>
@@ -70,19 +207,30 @@
       </div>
       <div class="post-body">
         <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
-          <img src="https://scontent.fbog2-5.fna.fbcdn.net/v/t1.6435-9/82179295_109334060602207_6282788979334971392_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFSZ7LHPTxJvwNPrCobzXV0hPSgA6rplmuE9KADqumWa9C9IWV7Zm82Z1DWN159NOOj35LvEoshy8NhWOF7fo4O&_nc_ohc=F3_iLAz1VgIQ7kNvwEknefx&_nc_oc=AdlzmQhKG31VOydkUfWuEm1B-xifiKGdH9kPNWKLijFoivF6NsWySf6dDSSS9iu6pfWPMmeTZOupdBn-k6Slwhk5&_nc_zt=23&_nc_ht=scontent.fbog2-5.fna&_nc_gid=KVgxpekO4dxDuUeiXJ_WoA&oh=00_AffDGJ-YfZwcRlWqRU8VuB4eKrLnLKakSMgXvuAAIiXkSg&oe=691B5D73" alt="Estudiantes en el colegio" style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+          <img
+            src="https://scontent.fbog2-5.fna.fbcdn.net/v/t1.6435-9/82179295_109334060602207_6282788979334971392_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=cc71e4&_nc_eui2=AeFSZ7LHPTxJvwNPrCobzXV0hPSgA6rplmuE9KADqumWa9C9IWV7Zm82Z1DWN159NOOj35LvEoshy8NhWOF7fo4O&_nc_ohc=F3_iLAz1VgIQ7kNvwEknefx&_nc_oc=AdlzmQhKG31VOydkUfWuEm1B-xifiKGdH9kPNWKLijFoivF6NsWySf6dDSSS9iu6pfWPMmeTZOupdBn-k6Slwhk5&_nc_zt=23&_nc_ht=scontent.fbog2-5.fna&_nc_gid=KVgxpekO4dxDuUeiXJ_WoA&oh=00_AffDGJ-YfZwcRlWqRU8VuB4eKrLnLKakSMgXvuAAIiXkSg&oe=691B5D73"
+            alt="Estudiantes en el colegio"
+            style="width: 100%; max-width: 600px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
         </div>
-        
-        <p>¡El momento ha llegado! El Colegio Técnico Aldemar Rojas Plazas C.E.D. abre oficialmente el proceso de <strong>MATRÍCULAS PARA EL AÑO 2026</strong>, con cupos disponibles para grado 10° en todos nuestros programas técnicos especializados.</p>
 
-          <h2>🎓 ¡No te quedes sin ser parte de la comunidad Aldemarista!</h2>
-          <p>Únete a una institución con más de 55 años de experiencia formando técnicos exitosos</p>
-      
+        <p>¡El momento ha llegado! El Colegio Técnico Aldemar Rojas Plazas C.E.D. abre oficialmente el proceso de
+          <strong>MATRÍCULAS PARA EL AÑO 2026</strong>, con cupos disponibles para grado 10° en todos nuestros programas
+          técnicos especializados.
+        </p>
+
+        <h2>🎓 ¡No te quedes sin ser parte de la comunidad Aldemarista!</h2>
+        <p>Únete a una institución con más de 55 años de experiencia formando técnicos exitosos</p>
+
 
         <h2>📋 Información del Proceso</h2>
-        <p>Estamos buscando estudiantes comprometidos que deseen formar parte de nuestra comunidad educativa y acceder a una educación técnica de calidad con doble titulación.</p>
-        <div class="post-image" style="margin: 1.5rem 0; text-align: center;">
-         <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcolegiotecnicoaldemarrojasplazas%2Fvideos%2F1495343068558286%2F&show_text=false&width=380&t=0" width="380" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        <p>Estamos buscando estudiantes comprometidos que deseen formar parte de nuestra comunidad educativa y acceder a
+          una educación técnica de calidad con doble titulación.</p>
+        <div class="video-vertical">
+          <iframe
+            src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Fcolegiotecnicoaldemarrojasplazas%2Fvideos%2F1495343068558286%2F&show_text=false&width=380&t=0"
+            frameborder="0" allowfullscreen="true" scrolling="no"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+          </iframe>
         </div>
 
         <h2>🔧 Programas Técnicos Disponibles</h2>
@@ -123,7 +271,8 @@
         <p>Para obtener más información o agendar tu cita para conocer nuestras instalaciones:</p>
 
         <div style="text-align: center; margin: 2rem 0;">
-          <a href="https://wa.me/573002073462?text=¡Hola!%20Deseo%20información%20sobre%20las%20matrículas%202026%20para%20grado%2010°" class="whatsapp-cta" target="_blank">
+          <a href="https://wa.me/573002073462?text=¡Hola!%20Deseo%20información%20sobre%20las%20matrículas%202026%20para%20grado%2010°"
+            class="whatsapp-cta" target="_blank">
             <i class="fab fa-whatsapp"></i> WhatsApp: 300 207 3462
           </a>
         </div>
@@ -156,11 +305,13 @@
           <li><strong>Inicio de Clases 2026:</strong> Febrero 2026</li>
         </ul>
 
-          <h2>🚀 ¡Tu futuro técnico comienza aquí!</h2>
-          <p>Forma parte de una institución que ha graduado miles de técnicos exitosos y contribuye al desarrollo de Colombia</p>
-   
+        <h2>🚀 ¡Tu futuro técnico comienza aquí!</h2>
+        <p>Forma parte de una institución que ha graduado miles de técnicos exitosos y contribuye al desarrollo de
+          Colombia</p>
 
-        <p>No pierdas esta oportunidad de acceder a una educación técnica de calidad que te preparará para el mundo laboral y la educación superior. ¡Contáctanos hoy mismo!</p>
+
+        <p>No pierdas esta oportunidad de acceder a una educación técnica de calidad que te preparará para el mundo
+          laboral y la educación superior. ¡Contáctanos hoy mismo!</p>
       </div>
       <div class="post-nav">
         <a class="news-link" href="noticias.html"><i class="fas fa-arrow-left"></i> Volver a noticias</a>
@@ -174,10 +325,12 @@
       <div class="footer-brand">
         <h3>Institución</h3>
         <p>Colegio Técnico Aldemar Rojas Plazas C.E.D.<br>
-        "Por una Colombia Productiva y en Paz"</p>
+          "Por una Colombia Productiva y en Paz"</p>
         <div class="footer-social">
-          <a class="social-link" href="https://www.facebook.com/colegiotecnicoaldemarrojasplazas" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-          <a class="social-link" href="https://www.instagram.com/coltecaldemarrojasplazas" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a class="social-link" href="https://www.facebook.com/colegiotecnicoaldemarrojasplazas"
+            aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a class="social-link" href="https://www.instagram.com/coltecaldemarrojasplazas" aria-label="Instagram"><i
+              class="fab fa-instagram"></i></a>
         </div>
       </div>
       <div class="footer-section">
@@ -194,7 +347,9 @@
         <ul>
           <li><a href="https://www.aldemar.zigmadatos.com">Notas</a></li>
           <li><a href="https://www.aula.arp.edu.co/login/index.php">Aula Virtual</a></li>
-          <li><a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a></li>
+          <li><a
+              href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&followup=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLSffZDp5Pnq0wgzA7lR9XcbaRPLpF41tWkT9-1qSHHeAYEX9dg%2Fviewform%3Fusp%3Dsend_form&ifkv=ARpgrqdLOa1WaNmxQvOPcygAX2vP7AeUJc9YfEnTdXYCyhlgTsvme6qJXSTjoRRWinqJ6d3IXi23JQ&ltmpl=forms&osid=1&passive=1209600&service=wise&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S272107350%3A1728049172368570&ddm=1">Excusas</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -205,7 +360,7 @@
       </div>
     </div>
   </footer>
-  
+
 
   <script>
     const toggleBtn = document.querySelector('.menu-toggle');
@@ -217,4 +372,5 @@
     }
   </script>
 </body>
+
 </html>

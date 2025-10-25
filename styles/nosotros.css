@@ -98,7 +98,9 @@
   font-weight: bold;
 }
 
-.values-section { padding: 3rem 0; }
+.values-section {
+  padding: 3rem 0;
+}
 
 .values-grid {
   display: grid;
@@ -115,13 +117,127 @@
   transition: var(--transicion);
 }
 
-.value-card:hover { transform: translateY(-6px); box-shadow: var(--sombra-fuerte); }
-
-.value-card h4 { color: var(--azul-principal); margin: 0.6rem 0; }
-.value-card p { color: var(--texto-suave); }
-
-@media (max-width: 900px) {
-  .about-section .about-grid { grid-template-columns: 1fr; }
-  .components-grid { grid-template-columns: 1fr; }
+.value-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-fuerte);
 }
 
+.value-card h4 {
+  color: var(--azul-principal);
+  margin: 0.6rem 0;
+}
+
+.value-card p {
+  color: var(--texto-suave);
+}
+
+
+.mision-section {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+}
+
+.mision-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+  max-width: 1200px; /* 🔹 límite de ancho */
+  margin-left: auto; /* 🔹 centrado horizontal */
+  margin-right: auto; /* 🔹 centrado horizontal */
+}
+
+.mision-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: var(--sombra-media);
+  overflow: hidden;
+  transition: var(--transicion);
+}
+
+.mision-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--sombra-fuerte);
+}
+
+.mision-image {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mision-azul {
+  background: linear-gradient(135deg, #003399 0%, #0066cc 100%);
+}
+
+.mision-amarillo {
+  background: linear-gradient(135deg, #FFCC00 0%, #ffd633 100%);
+}
+
+.mision-icon {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.mision-content {
+  padding: 1.5rem;
+}
+
+.mision-content h3 {
+  color: var(--azul-principal);
+  margin-bottom: 1rem;
+}
+
+.mision-content p {
+  color: var(--texto-suave);
+  line-height: 1.6;
+  text-align: justify;
+}
+
+@media (max-width: 900px) {
+  .about-section .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .components-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ====== RESPONSIVE ====== */
+@media (max-width: 768px) {
+  .mision-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mision-card {
+    text-align: center;
+  }
+
+  .mision-content p {
+    text-align: justify;
+  }
+
+  .mision-image {
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .mision-section {
+    padding: 3rem 1rem;
+  }
+
+  .mision-content {
+    padding: 1rem;
+  }
+
+  .mision-content h3 {
+    font-size: 1.2rem;
+  }
+
+  .mision-content p {
+    font-size: 0.95rem;
+  }
+}
