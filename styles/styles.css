@@ -1326,13 +1326,56 @@
       .news-grid {
         grid-template-columns: 1fr;
       }
-
+      .contact-item {
+        align-items: flex-start;
+        text-align: left;
+        flex-wrap: wrap; /* permite que el texto baje */
+        padding: 0.8rem 1rem;
+      }
+    
+      .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+      }
+    
+      .contact-text {
+        flex: 1 1 100%; /* fuerza a ocupar toda la línea */
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        white-space: normal; /* permite que se partan las líneas largas */
+      }
+    
+      .contact-label {
+        font-size: 0.85rem;
+      }
+    
+      .contact-value {
+        font-size: 1rem;
+        line-height: 1.4;
+      }
       .footer-bottom {
         flex-direction: column;
         text-align: center;
       }
     }
-
+    
+    @media (max-width: 480px) {
+      .contact-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .contact-icon {
+        margin-bottom: 0.5rem;
+      }
+    
+      .contact-text {
+        flex: none;
+      }
+    }
     /* ================== EFECTOS ESPECIALES ================== */
     .parallax {
       position: relative;
