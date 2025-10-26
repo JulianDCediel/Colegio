@@ -95,11 +95,91 @@
             </div>
           </div>
           <a href='#plan' class='about-cta'>Explorar plan <i class='fas fa-arrow-right'></i></a>
+          <button class='about-cta' id='toggle-docentes'
+            style="background: transparent; border: 2px solid #003399; color: #003399; cursor: pointer;">
+            Docentes <i class='fas fa-chalkboard-teacher'></i>
+          </button>
         </div>
         <div class='about-image-container animate-on-scroll'>
           <div class='about-image'
             style="background-image:url('https://www.arp.edu.co/wp-content/uploads/2023/05/delineante.jpg');"></div>
           <div class='about-image-overlay'>CAD y representación</div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Sección de Docentes (inicialmente oculta) -->
+    <section class='docentes-section' id='docentes' style='display: none; background: #f8f9fa; padding: 4rem 2rem;'>
+      <div class='container' style='max-width: 1200px; margin: 0 auto;'>
+        <div class='section-header animate-on-scroll'>
+          <h2>Nuestros Docentes</h2>
+          <p>Profesionales especializados en Arquitectura</p>
+        </div>
+        <div class='docentes-grid'
+          style='display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;'>
+
+          <div class='docente-card'
+            style='background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;'>
+            <div class='docente-avatar'
+              style='width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #003399, #0044bb); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: white;'>
+              <i class='fas fa-user'></i>
+            </div>
+            <h3 style='color: #003399; margin-bottom: 0.5rem; text-align: center;'>Nombre del Docente 1</h3>
+            <p style='color: #666; font-size: 0.9rem; margin-bottom: 1rem; text-align: center;'>Arquitecto</p>
+            <div style='border-top: 2px solid #f0f0f0; padding-top: 1rem;'>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'>
+                <strong>Especialidad:</strong> Construccion edificios
+              </p>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'>
+                <strong>Experiencia:</strong> 10+ años en arquitectura
+              </p>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'><strong>Email:</strong>
+                docente1@arp.edu.co</p>
+            </div>
+          </div>
+
+          <div class='docente-card'
+            style='background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;'>
+            <div class='docente-avatar'
+              style='width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #0044bb, #0055dd); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: white;'>
+              <i class='fas fa-user'></i>
+            </div>
+            <h3 style='color: #003399; margin-bottom: 0.5rem; text-align: center;'>Nombre del Docente 2</h3>
+            <p style='color: #666; font-size: 0.9rem; margin-bottom: 1rem; text-align: center;'>Arquitecta</p>
+            <div style='border-top: 2px solid #f0f0f0; padding-top: 1rem;'>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'>
+                <strong>Especialidad:</strong> Construccion puentes
+              </p>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'>
+                <strong>Experiencia:</strong> 8+ años en proyectos de infraestructura
+              </p>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'><strong>Email:</strong>
+                docente2@arp.edu.co</p>
+            </div>
+          </div>
+
+          <div class='docente-card'
+            style='background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;'>
+            <div class='docente-avatar'
+              style='width: 100px; height: 100px; border-radius: 50%; background: linear-gradient(135deg, #0055dd, #0066ff); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; font-size: 2.5rem; color: white;'>
+              <i class='fas fa-user'></i>
+            </div>
+            <h3 style='color: #003399; margin-bottom: 0.5rem; text-align: center;'>Nombre del Docente 3</h3>
+            <p style='color: #666; font-size: 0.9rem; margin-bottom: 1rem; text-align: center;'>Arquitecto
+            </p>
+            <div style='border-top: 2px solid #f0f0f0; padding-top: 1rem;'>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'>
+                <strong>Especialidad:</strong> Construccion puentes
+              </p>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'>
+                <strong>Experiencia:</strong> 12+ años en seguridad vial
+              </p>
+              <p style='color: #333; line-height: 1.6; font-size: 0.9rem; margin: 0.5rem 0;'><strong>Email:</strong>
+                docente3@arp.edu.co</p>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -327,6 +407,46 @@
     window.addEventListener('scroll', onScroll); onScroll();
     const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }); }, { threshold: 0.1 });
     document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
+
+    
+    // Toggle para mostrar/ocultar sección de docentes
+    const toggleDocentes = document.getElementById('toggle-docentes');
+    const docentesSection = document.getElementById('docentes');
+
+    if (toggleDocentes && docentesSection) {
+      toggleDocentes.addEventListener('click', () => {
+        if (docentesSection.style.display === 'none') {
+          docentesSection.style.display = 'block';
+          // Scroll suave hacia la sección
+          setTimeout(() => {
+            docentesSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
+          toggleDocentes.innerHTML = 'Ocultar Docentes <i class="fas fa-times"></i>';
+          toggleDocentes.style.background = '#003399';
+          toggleDocentes.style.color = 'white';
+        } else {
+          docentesSection.style.display = 'none';
+          toggleDocentes.innerHTML = 'Docentes <i class="fas fa-chalkboard-teacher"></i>';
+          toggleDocentes.style.background = 'transparent';
+          toggleDocentes.style.color = '#003399';
+        }
+      });
+    }
+
+    // Efecto hover en las tarjetas de docentes
+    document.addEventListener('DOMContentLoaded', () => {
+      const docenteCards = document.querySelectorAll('.docente-card');
+      docenteCards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-8px)';
+          card.style.boxShadow = '0 8px 16px rgba(0,51,153,0.2)';
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0)';
+          card.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        });
+      });
+    });
   </script>
 </body>
 
